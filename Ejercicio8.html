@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Estilos CSS para el carrusel */
+        #carousel-container {
+            width: 780px;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #image-slider {
+            width: 200%;
+            display: flex;
+            transition: 1s;
+        }
+
+        .slide {
+            width: 43.33%;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="carousel-container">
+        <div id="image-slider">
+            <div class="slide">
+                <img src="https://dealgoritmos.com/wp-content/uploads/2023/05/6d8841b6-9d24-457a-95c5-0d3de1d7bf5f.png" alt="Imagen 1">
+            </div>
+            <div class="slide">
+                <img src="https://www.fayerwayer.com/resizer/dFDSLv4dHrkcEteV06yZ3eQ9HNY=/800x0/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/metroworldnews/AFMOVVBDTZATHHAXSMOOHW3HGI.jpeg" alt="Imagen 2">
+            </div>
+            <div class="slide">
+                <img src="https://cdn.andro4all.com/andro4all/2023/04/34ef9217-52d8-4e4b-9ba1-349e7570d8e4.jpg" alt="Imagen 3">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript para controlar el carrusel
+        const slider = document.getElementById('image-slider');
+        let currentIndex = 0;
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % 3;
+            updateSlider();
+        }
+
+        function updateSlider() {
+            const translateValue = currentIndex * -100;
+            slider.style.transform = `translateX(${translateValue}%)`;
+        }
+
+        // Cambiar automáticamente de imagen cada 3 segundos (3000 ms)
+        setInterval(nextSlide, 3000);
+    </script>
+</body>
+</html>

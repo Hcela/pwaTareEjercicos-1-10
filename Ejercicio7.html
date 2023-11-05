@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Estilos para el menú de navegación */
+        ul.nav-menu {
+            list-style-type: none;
+            padding: 0;
+            background-color: #3ac26e;
+        }
+
+        ul.nav-menu li {
+            display: inline-block;
+            position: relative;
+        }
+
+        ul.nav-menu li a {
+            display: block;
+            padding: 15px 20px;
+            color: hsl(184, 80%, 31%);
+            text-decoration: none;
+        }
+
+        ul.nav-menu li:hover {
+            background-color: #555555;
+        }
+
+        /* Estilos para los submenús */
+        ul.submenu {
+            display: none;
+            position: absolute;
+            background-color: #555;
+        }
+
+        ul.nav-menu li:hover ul.submenu {
+            display: block;
+        }
+
+        ul.submenu li {
+            display: block;
+        }
+
+        ul.submenu li a {
+            padding: 10px 15px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav-menu">
+        <li><a href="#">Inicio</a></li>
+        <li>
+            <a href="#">Ejercicios</a>
+            <ul class="submenu">
+                <li><a href="#">Ejercicios 1</a> </li>
+                <li><a href="#">Ejercicios 2</a></li>
+                <li><a href="#">Ejercicios 3</a></li>
+                <li><a href="#">Ejercicios 4</a></li>
+                <li><a href="#">Ejercicios 5</a></li>
+                <li><a href="#">Ejercicios 6</a></li>
+                <li><a href="#">Ejercicios 7</a></li>
+                <li><a href="#">Ejercicios 8</a></li>
+                <li><a href="#">Ejercicios 9</a></li>
+                <li><a href="#">Ejercicios 10</a></li>
+            </ul>
+        </li>
+        
+    </ul>
+</body>
+</html>
+

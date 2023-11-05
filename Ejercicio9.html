@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Temporizador de Cuenta Regresiva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #countdown {
+            font-size: 36px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Temporizador de Cuenta Regresiva</h1>
+    <div id="countdown"></div>
+
+    <script>
+        // Establecer la fecha objetivo para la cuenta regresiva (formato: Año, Mes (0-11), Día, Hora, Minuto, Segundo)
+        const fechaObjetivo = new Date(2023, 11, 31, 23, 59, 59);
+
+        // Función para actualizar el temporizador
+        function actualizarCuentaRegresiva() {
+            const ahora = new Date();
+            const tiempoRestante = fechaObjetivo - ahora;
+
+            if (tiempoRestante <= 0) {
+                document.getElementById('countdown').textContent = '¡Tiempo Agotado!';
+            } else {
+                const dias = Math.floor(tiempoRestante / (1000 * 60 * 60 * 24));
+                const horas = Math.floor((tiempoRestante % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutos = Math.floor((tiempoRestante % (1000 * 60 * 60)) / (1000 * 60));
+                const segundos = Math.floor((tiempoRestante % (1000 * 60)) / 1000);
+
+                document.getElementById('countdown').textContent = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+            }
+        }
+
+        // Actualizar el temporizador cada segundo
+        setInterval(actualizarCuentaRegresiva, 1000);
+
+        // Llamar a la función inicialmente para evitar un retraso de un segundo en la visualización
+        actualizarCuentaRegresiva();
+    </script>
+</body>
+</html>

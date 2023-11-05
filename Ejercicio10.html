@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Juego de Preguntas y Respuestas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Juego de Preguntas y Respuestas</h1>
+
+    <div class="question">
+        <p>Pregunta 1: ¿Cuál es la capital de Francia?</p>
+        <label>
+            <input type="radio" name="q1" value="a"> a) Madrid
+        </label>
+        <label>
+            <input type="radio" name="q1" value="b"> b) París
+        </label>
+        <label>
+            <input type="radio" name="q1" value="c"> c) Londres
+        </label>
+    </div>
+
+    <div class="question">
+        <p>Pregunta 2: ¿Cuántos lados tiene un triángulo?</p>
+        <label>
+            <input type="radio" name="q2" value="a"> a) 3
+        </label>
+        <label>
+            <input type="radio" name="q2" value="b"> b) 4
+        </label>
+        <label>
+            <input type="radio" name="q2" value="c"> c) 5
+        </label>
+    </div>
+
+    <div class="question">
+        <p>Pregunta 3: ¿Qué planeta es conocido como el planeta rojo?</p>
+        <label>
+            <input type="radio" name="q3" value="a"> a) Venus
+        </label>
+        <label>
+            <input type="radio" name="q3" value="b"> b) Marte
+        </label>
+        <label>
+            <input type="radio" name="q3" value="c"> c) Júpiter
+        </label>
+    </div>
+
+    <button onclick="calificarRespuestas()">Calificar respuestas</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calificarRespuestas() {
+            const respuestasCorrectas = ["b", "a", "b"];
+            const respuestasSeleccionadas = [
+                document.querySelector('input[name="q1"]:checked').value,
+                document.querySelector('input[name="q2"]:checked').value,
+                document.querySelector('input[name="q3"]:checked').value
+            ];
+
+            let puntaje = 0;
+            for (let i = 0; i < respuestasCorrectas.length; i++) {
+                if (respuestasCorrectas[i] === respuestasSeleccionadas[i]) {
+                    puntaje++;
+                }
+            }
+
+            document.getElementById("resultado").textContent = `Tu puntaje es: ${puntaje} de 3`;
+        }
+    </script>
+</body>
+</html>
+
